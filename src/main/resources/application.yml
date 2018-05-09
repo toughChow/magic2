@@ -4,6 +4,7 @@ spring:
     freemarker:
         template-loader-path: classpath:/templates/
         check-template-location: false
+        cache: false
 
     datasource:
         url: jdbc:mysql://localhost:3306/magic2?useSSL=false&characterEncoding=utf8

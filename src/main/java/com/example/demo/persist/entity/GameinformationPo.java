@@ -18,11 +18,11 @@ public class GameinformationPo {
 
     //游戏商
     @Column(name = "game_Publisher")
-    private  String Publisher;
+    private String publisher;
 
     //游戏背景
     @Column(name = "game_background")
-    private  String background;
+    private String background;
 
     //头标logo
     @Column(name = "game_logoUrl")
@@ -34,17 +34,17 @@ public class GameinformationPo {
 
     //游戏评分
     @Column(name = "game_score")
-    private  double  score;
+    private double score;
 
     //游戏宣传图片
     @Column(name = "game_image")
-    private  String imageUrl;
+    private String imageUrl;
 
     @Column(name = "game_image2")
-    private  String imageUrl2;
+    private String imageUrl2;
 
     @Column(name = "game_image3")
-    private  String imageUrl3;
+    private String imageUrl3;
     //大小
     @Column(name = "game_size")
     private String size;
@@ -73,6 +73,22 @@ public class GameinformationPo {
     @Column(name = "GameDownload_id")
     private Integer GameDownload_id;
 
+    //0待审核 1上线 2下线
+    @Column(name = "STATUS")
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    //游戏与下载地址一对多的关系映射
+    @Column(name = "ADMIN_Id")
+    private Integer adminId;
+
     public Integer getId() {
         return id;
     }
@@ -90,11 +106,11 @@ public class GameinformationPo {
     }
 
     public String getPublisher() {
-        return Publisher;
+        return publisher;
     }
 
     public void setPublisher(String publisher) {
-        Publisher = publisher;
+        this.publisher = publisher;
     }
 
     public double getScore() {
@@ -214,7 +230,7 @@ public class GameinformationPo {
         return "GameinformationPo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", Publisher='" + Publisher + '\'' +
+                ", publisher='" + publisher + '\'' +
                 ", background='" + background + '\'' +
                 ", logoUrl='" + logoUrl + '\'' +
                 ", type='" + type + '\'' +

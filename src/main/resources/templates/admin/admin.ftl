@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="assets/css/public.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/admin.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/houtai.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/smartMenu.css" type="text/css" rel="stylesheet">
-    <title>魔法师</title>
+    <link href="/assets/css/public.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/admin.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/houtai.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/smartMenu.css" type="text/css" rel="stylesheet">
+    <title>校友网</title>
     <style>
         /*dd>a{*/
             /*padding: 0 0 0 40px!important;*/
@@ -16,7 +16,7 @@
 <body>
         <div id="admin">
             <div class="ad-menu" id="ad-menu">
-                <div class="ad-logo"><img src="assets/images/logo.png" height="80%" width="80%"></div>
+                <div class="ad-logo"><img src="/assets/images/logo.png" height="80%" width="80%"></div>
                 <div class="ad-list">
                     <ul style="padding: 0;">
                     <@shiro.hasRole name="商家">
@@ -46,7 +46,7 @@
                         <div class="li-item"><em class="scm li-ico ic3"></em>游戏管理<span class="scm arrow"></span></div>
                         <dl>
                             <dd>
-                                <a href="#" class="dd-item">发布游戏<span class="scm dd-ar"></span></a>
+                                <a href="/deployGame" class="dd-item">发布游戏<span class="scm dd-ar"></span></a>
                             </dd>
                             <dd>
                                 <a href="#" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
@@ -59,16 +59,16 @@
                     </@shiro.hasRole>
                     <@shiro.hasRole name="管理员">
                         <li>
-                            <div class="li-item fanhui"  style="font-size: 24px"><em class="scm li-ico ic2"></em>管理平台<span class="scm arrow"></span></div>
+                            <div class="li-item"  style="font-size: 24px"><em class="scm li-ico ic2"></em>管理平台<span class="scm arrow"></span></div>
                         </li>
                         <li>
                             <div class="li-item"><em class="scm li-ico ic4"></em>用户管理<span class="scm arrow"></span></div>
                             <dl>
                                 <dd>
-                                    <a href="#" class="dd-item">会员管理<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/users/list" class="dd-item">会员管理<span class="scm dd-ar"></span></a>
                                 </dd>
                                 <dd>
-                                    <a href="#" class="dd-item">厂商管理<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/vendors/list" class="dd-item">厂商管理<span class="scm dd-ar"></span></a>
                                 </dd>
                             </dl>
                         </li>
@@ -76,10 +76,10 @@
                             <div class="li-item"><em class="scm li-ico ic5"></em>游戏管理<span class="scm arrow"></span></div>
                             <dl>
                                 <dd>
-                                    <a href="#" class="dd-item">已上线游戏<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/game/pass" class="dd-item">已上线游戏<span class="scm dd-ar"></span></a>
                                 </dd>
                                 <dd>
-                                    <a href="#" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/game/pending" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
                                 </dd>
                             </dl>
                         </li>
@@ -87,7 +87,10 @@
                             <div class="li-item"><em class="scm li-ico ic6"></em>统计管理<span class="scm arrow"></span></div>
                             <dl>
                                 <dd>
-                                    <a href="/Monthlyprofit" class="dd-item">年利润比例<span class="scm dd-ar"></span></a>
+                                    <a href="#" class="dd-item">月利润<span class="scm dd-ar"></span></a>
+                                </dd>
+                                <dd>
+                                    <a href="#" class="dd-item">年利润<span class="scm dd-ar"></span></a>
                                 </dd>
                             </dl>
                         </li>
@@ -103,7 +106,7 @@
                         </div>
                         <div class="ad-top-right">
                             <div class="ad-welcom">
-                                <div class="ad-wel-img"><img src="assets/images/logo.png" height="26" width="36"></div>
+                                <div class="ad-wel-img"><img src="/assets/images/logo.png" height="26" width="36"></div>
                                 <div class="ad-wel-text">
                                 <#if user??>
                                     <div class="font-wel">欢迎您！<strong>${user.name}</strong></div>
@@ -123,9 +126,15 @@
                     </div>
                 </div>
                 <div class="ad-main-comment J_mainContent" id="ad-iframe">
+
+
+
                     <#--<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/admin/index_v0.ftl" frameborder="0"  seamless></iframe>-->
-                    <#include "/admin/index_v0.ftl">
-                    <#--<#include "/admin/Forbid.ftl">-->
+                    <#--<#include "/admin/VendorInformation.ftl">-->
+                    <#include "/admin/Audit.ftl">
+
+
+
                 </div>
             </div>
         </div>
