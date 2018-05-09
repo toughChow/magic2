@@ -59,7 +59,7 @@
                     </@shiro.hasRole>
                     <@shiro.hasRole name="管理员">
                         <li>
-                            <div class="li-item"  style="font-size: 24px"><em class="scm li-ico ic2"></em>管理平台<span class="scm arrow"></span></div>
+                            <div class="li-item fanhui"  style="font-size: 24px"><em class="scm li-ico ic2"></em>管理平台<span class="scm arrow"></span></div>
                         </li>
                         <li>
                             <div class="li-item"><em class="scm li-ico ic4"></em>用户管理<span class="scm arrow"></span></div>
@@ -87,10 +87,7 @@
                             <div class="li-item"><em class="scm li-ico ic6"></em>统计管理<span class="scm arrow"></span></div>
                             <dl>
                                 <dd>
-                                    <a href="#" class="dd-item">月利润<span class="scm dd-ar"></span></a>
-                                </dd>
-                                <dd>
-                                    <a href="#" class="dd-item">年利润<span class="scm dd-ar"></span></a>
+                                    <a href="/Monthlyprofit" class="dd-item">年利润比例<span class="scm dd-ar"></span></a>
                                 </dd>
                             </dl>
                         </li>
