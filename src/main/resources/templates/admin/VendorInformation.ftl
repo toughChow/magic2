@@ -133,8 +133,43 @@
                                 </form>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section2">
-                                <h3>Section 2</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna a ultricies volutpat, mi eros viverra massa, vitae consequat nisi justo in tortor. Proin accumsan felis ac felis dapibus, non iaculis mi varius.</p>
+                                <table class="table table-bordered table-striped" id="test_table">
+                                    <thead>
+                                    <tr>
+                                        <td>排序</td>
+                                        <td>季度排名</td>
+                                        <td>游戏名</td>
+                                        <td>类型</td>
+                                        <td>用户人数</td>
+                                        <td>最高在线人数</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#list game as game>
+                                    <tr>
+                                        <td>
+                                            <span>${game_index+1}</span>
+                                        </td>
+                                        <td>
+                                            <span>${game.id}</span>
+                                        </td>
+                                        <td>
+                                            <span>${game.name}</span>
+                                        </td>
+                                        <td>
+                                            <span>${game.type}</span>
+                                        </td>
+                                        <td>
+                                            <span>${(200000/(game_index+1))? floor}</span>
+
+                                        </td>
+                                        <td>
+                                            <span>${(200000/(game.id+1))? floor}</span>
+                                        </td>
+                                    </tr>
+                                    </#list>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

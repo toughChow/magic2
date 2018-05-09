@@ -7,6 +7,7 @@ import com.example.demo.persist.dao.VendorInformationDao;
 import com.example.demo.persist.entity.AdminPo;
 import com.example.demo.persist.service.AdminService;
 import com.example.demo.persist.service.BankService;
+import com.example.demo.persist.service.GameInformationService;
 import com.example.demo.persist.service.VendorInformationService;
 import com.example.demo.persist.utils.MD5;
 import com.example.demo.persist.utils.msg.SendMsg;
@@ -31,6 +32,8 @@ public class LoginController extends BaseController{
     BankService bankService;
     @Autowired
     VendorInformationService vendorInformationService;
+    @Autowired
+    GameInformationService gameInformationService;
     protected static String codeStr = "fake"; // default validation Code
     private String number;
     @RequestMapping("/")
@@ -135,6 +138,10 @@ public class LoginController extends BaseController{
     public String VendorInformation(ModelMap model) {
         model.put("admin",adminService.findUserByname(String.valueOf(session.getAttribute("username"))));
         model.put("vend",vendorInformationService.findAll(String.valueOf(session.getAttribute("username"))));
+
+        //查询游戏排名 给予显示
+        AdminPo adminPo= adminService.findUserByname(String.valueOf(session.getAttribute("username")));
+        model.put("game",gameInformationService.findAll(adminPo.getId()));
         return "/admin/subpage/VendorInformation";
     }
     //已上线游戏
