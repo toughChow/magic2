@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="assets/css/public.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/admin.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/houtai.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/smartMenu.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/public.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/admin.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/houtai.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/smartMenu.css" type="text/css" rel="stylesheet">
     <title>校友网</title>
     <style>
         /*dd>a{*/
@@ -16,7 +16,7 @@
 <body>
         <div id="admin">
             <div class="ad-menu" id="ad-menu">
-                <div class="ad-logo"><img src="assets/images/logo.png" height="80%" width="80%"></div>
+                <div class="ad-logo"><img src="/assets/images/logo.png" height="80%" width="80%"></div>
                 <div class="ad-list">
                     <ul style="padding: 0;">
                     <@shiro.hasRole name="商家">
@@ -106,7 +106,7 @@
                         </div>
                         <div class="ad-top-right">
                             <div class="ad-welcom">
-                                <div class="ad-wel-img"><img src="assets/images/logo.png" height="26" width="36"></div>
+                                <div class="ad-wel-img"><img src="/assets/images/logo.png" height="26" width="36"></div>
                                 <div class="ad-wel-text">
                                     <div class="font-wel">欢迎您！<strong>李春华</strong></div>
                                     <div class="font-wel"><a href="javascript:;"><strong>【退出】</strong></a></div>
@@ -124,9 +124,15 @@
                     </div>
                 </div>
                 <div class="ad-main-comment J_mainContent" id="ad-iframe">
+
+
+
                     <#--<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/admin/index_v0.ftl" frameborder="0"  seamless></iframe>-->
                     <#--<#include "/admin/VendorInformation.ftl">-->
                     <#include "/admin/Audit.ftl">
+
+
+
                 </div>
             </div>
         </div>
