@@ -334,7 +334,7 @@
 
     // 设置IFRAME自适应高度
     function getHeight(){
-        var gh=($(document.body).height()-134)+"px";
+        var gh=($(document.body).height()-91)+"px";
         $("#ad-iframe").css("height",gh)
     }
     getHeight();

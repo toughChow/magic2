@@ -6,7 +6,7 @@
     <link href="assets/css/admin.css" type="text/css" rel="stylesheet">
     <link href="assets/css/houtai.css" type="text/css" rel="stylesheet">
     <link href="assets/css/smartMenu.css" type="text/css" rel="stylesheet">
-    <title>校友网</title>
+    <title>魔法师</title>
     <style>
         /*dd>a{*/
             /*padding: 0 0 0 40px!important;*/
@@ -125,8 +125,8 @@
                 </div>
                 <div class="ad-main-comment J_mainContent" id="ad-iframe">
                     <#--<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/admin/index_v0.ftl" frameborder="0"  seamless></iframe>-->
-                    <#--<#include "/admin/VendorInformation.ftl">-->
-                    <#include "/admin/Audit.ftl">
+                    <#include "/admin/index_v0.ftl">
+                    <#--<#include "/admin/Forbid.ftl">-->
                 </div>
             </div>
         </div>
