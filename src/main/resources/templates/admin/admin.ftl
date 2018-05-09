@@ -105,8 +105,10 @@
                             <div class="ad-welcom">
                                 <div class="ad-wel-img"><img src="assets/images/logo.png" height="26" width="36"></div>
                                 <div class="ad-wel-text">
-                                    <div class="font-wel">欢迎您！<strong>李春华</strong></div>
-                                    <div class="font-wel"><a href="javascript:;"><strong>【退出】</strong></a></div>
+                                <#if user??>
+                                    <div class="font-wel">欢迎您！<strong>${user.name}</strong></div>
+                                </#if>
+                                    <div class="font-wel"><a href="/exeit;"><strong>【退出】</strong></a></div>
                                 </div>
                             </div>
                         </div>

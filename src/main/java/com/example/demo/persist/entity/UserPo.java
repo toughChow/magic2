@@ -26,7 +26,7 @@ public class UserPo {
     private  int age;
 
     @Column(name = "user_sex")
-    private  int sex;//1男 0 女
+    private  int sex;
 
     @Column(name = "user_email")
     private  String email;
@@ -40,7 +40,7 @@ public class UserPo {
 
     //状态
     @Column(name = "user_status",columnDefinition = "varchar(128) default '0'")//0为激活用户，1为封号中
-    private int status;//0启用 1是 禁止
+    private int status;
 
 
     //与余额单向一对一

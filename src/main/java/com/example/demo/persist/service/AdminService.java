@@ -11,4 +11,5 @@ public interface AdminService {
     AdminPo findUserByname(String user_name);
     //注册
     AdminPo saveUser(String username,String nickname,String  mailbox,String Passworld);
+
 }

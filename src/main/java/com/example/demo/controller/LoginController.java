@@ -2,9 +2,12 @@ package com.example.demo.controller;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.example.demo.controller.deslk.BaseController;
+import com.example.demo.persist.dao.AdminDao;
+import com.example.demo.persist.dao.VendorInformationDao;
 import com.example.demo.persist.entity.AdminPo;
 import com.example.demo.persist.service.AdminService;
 import com.example.demo.persist.service.BankService;
+import com.example.demo.persist.service.VendorInformationService;
 import com.example.demo.persist.utils.MD5;
 import com.example.demo.persist.utils.msg.SendMsg;
 import org.apache.shiro.SecurityUtils;
@@ -12,6 +15,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,6 +29,8 @@ public class LoginController extends BaseController{
     AdminService adminService;
     @Autowired
     BankService bankService;
+    @Autowired
+    VendorInformationService vendorInformationService;
     protected static String codeStr = "fake"; // default validation Code
     private String number;
     @RequestMapping("/")
@@ -48,7 +54,7 @@ public class LoginController extends BaseController{
 
     //登录验证
     @RequestMapping(value = "/loginUser")
-    public String loginUser(String username, String password) {
+    public String loginUser(String username, String password,ModelMap model) {
         password = MD5.md5Password(password);
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
@@ -60,11 +66,13 @@ public class LoginController extends BaseController{
              session.setAttribute("username", username);
              AdminPo adminPo = (AdminPo) subject.getPrincipal();
              session.setAttribute("adminPo", adminPo);
+             model.put("user",adminService.findUserByname(String.valueOf(session.getAttribute("username"))));
              return "/admin/admin";
          }else if (vip3==true && vip2==false){//管理员
-             session.setAttribute("username", username);
+             session.setAttribute("usernameusername", username);
              AdminPo adminPo = (AdminPo) subject.getPrincipal();
              session.setAttribute("adminPo", adminPo);
+             model.put("user",adminService.findUserByname(String.valueOf(session.getAttribute("usernameusername"))));
              return "/admin/admin";
          }
         } catch (Exception e) {
@@ -101,51 +109,71 @@ public class LoginController extends BaseController{
     }
 
     //用户注册
-    @PostMapping(value = "/userRegister")
+    @RequestMapping(value = "/userRegister")
     public String UserRegister(String username, String name, String call, String password) {
+       AdminPo adminPo= adminService.findUserByname(String.valueOf(session.getAttribute("username")));
         if (adminService.saveUser(username, name, call, password) == null) {
+            vendorInformationService.saveVendorInformation(adminPo.getId());
             return "/registered";
         }
         return "/login";
     }
 
-
+    //注销登陆
+    @RequestMapping(value = "/exeit")
+    public String exeit() {
+        session.removeAttribute("username");
+        session.removeAttribute("adminPo");
+        session.invalidate();
+        return "/login";
+    }
 
 
     //个人首页部分
     //厂商信息
     @RequestMapping("/VendorInformation")
-    public String VendorInformation() {
+    public String VendorInformation(ModelMap model) {
+        model.put("admin",adminService.findUserByname(String.valueOf(session.getAttribute("username"))));
+        model.put("vend",vendorInformationService.findAll(String.valueOf(session.getAttribute("username"))));
         return "/admin/subpage/VendorInformation";
     }
     //已上线游戏
     @RequestMapping("/Onlinegame")
     public String Onlinegame() {
-        return "/admin/Onlinegame";
+        return "/admin/subpage/Onlinegame";
     }
 
     //游戏运营统计
     //月收益
     @RequestMapping("/MonthlyIncome")
     public String MonthlyIncome() {
-        return "/admin/MonthlyIncome";
+        return "/admin/subpage/MonthlyIncome";
     }
-
+//    //季度收益
+//    @RequestMapping("/Quarterlyearnings")
+//    public String Quarterlyearnings() {
+//        return "/admin/Quarterlyearnings";
+//    }
+//    //年收益
+//    @RequestMapping("/Annualincome")
+//    public String Annualincome() {
+//        return "/admin/Annualincome";
+//    }
 
     //游戏管理
     //发布游戏
     @RequestMapping("/Issue")
     public String Issue() {
-        return "/admin/Issue";
+        return "/admin/subpag/Issue";
     }
     //审核中
     @RequestMapping("/Audit")
     public String Audit() {
-        return "/admin/Audit";
+        return "/admin/subpag/Audit";
     }
     //游戏运行
     @RequestMapping("/Forbid")
     public String Forbid() {
-        return "/admin/Forbid";
+        return "/admin/subpag/Forbid";
     }
 }

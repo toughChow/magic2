@@ -4,13 +4,15 @@
 <div class="tj_top"></div>
 <div class="tj_tit">当前在线人数</div>
 <div class="dataStatistics">
+
     <div class="digit_set"></div>
     <div class="digit_set"></div>
     <div class="digit_set"></div>
     <div class="digit_set"></div>
     <div class="digit_set"></div>
-    <div class="digit_set set_last"></div>
-    <div class="tj_foot" style="width: 100%;height: 100%;margin: 0 auto;"></div>
+    <div class="digit_set set_last">
+        <div class="tj_foot" style="width: 100%;height: 100%;margin: 0 auto;"></div>
+    </div>
 </div>
 
 

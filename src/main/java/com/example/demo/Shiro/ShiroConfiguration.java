@@ -29,6 +29,7 @@ public class ShiroConfiguration {
         LinkedHashMap<String, String> filterChainDefinitionMap=new LinkedHashMap<>();
         filterChainDefinitionMap.put("/assets/**", "anon");
         filterChainDefinitionMap.put("/*", "anon"); //表示可以匿名访问
+        filterChainDefinitionMap.put("/**", "anon"); //表示可以匿名访问
 //        filterChainDefinitionMap.put("/admin/**", "authc");//表示需要认证才可以访问
 //        filterChainDefinitionMap.put("/**", "authc");//表示需要认证才可以访问
 //        filterChainDefinitionMap.put("/*.*", "authc");

@@ -7,6 +7,11 @@
     <link href="assets/css/houtai.css" type="text/css" rel="stylesheet">
     <link href="assets/css/smartMenu.css" type="text/css" rel="stylesheet">
     <title>魔法师</title>
+    <style>
+        /*dd>a{*/
+        /*padding: 0 0 0 40px!important;*/
+        /*}*/
+    </style>
 </head>
 <body>
 <div id="admin">
@@ -54,7 +59,7 @@
             </@shiro.hasRole>
             <@shiro.hasRole name="管理员">
                 <li>
-                    <div class="li-item"  style="font-size: 24px"><em class="scm li-ico ic2"></em>管理平台<span class="scm arrow"></span></div>
+                    <div class="li-item fanhui"  style="font-size: 24px"><em class="scm li-ico ic2"></em>管理平台<span class="scm arrow"></span></div>
                 </li>
                 <li>
                     <div class="li-item"><em class="scm li-ico ic4"></em>用户管理<span class="scm arrow"></span></div>
@@ -119,7 +124,7 @@
         </div>
         <div class="ad-main-comment J_mainContent" id="ad-iframe">
         <#--<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/admin/index_v0.ftl" frameborder="0"  seamless></iframe>-->
-                    <#include "/admin/VendorInformation.ftl">
+                    <#include "/admin/Onlinegame.ftl">
                     <#--<#include "/admin/Forbid.ftl">-->
         </div>
     </div>

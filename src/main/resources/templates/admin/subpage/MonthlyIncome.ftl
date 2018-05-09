@@ -119,7 +119,7 @@
         </div>
         <div class="ad-main-comment J_mainContent" id="ad-iframe">
         <#--<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/admin/index_v0.ftl" frameborder="0"  seamless></iframe>-->
-                    <#include "/admin/VendorInformation.ftl">
+                    <#include "/admin/Monthlyprofit.ftl">
                     <#--<#include "/admin/Forbid.ftl">-->
         </div>
     </div>
