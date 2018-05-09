@@ -25,7 +25,7 @@ html,body{height:100%;}
 .ad-menu .ad-list .dd-item .dd-ar{width:13px;height:22px;background-position:-90px -73px;position:absolute;top:50%;right:-1px;margin-top:-11px;display:none;}
 .ad-menu .ad-list  dd.on .dd-ar{display:block;}
 .ad-menu .ad-list  dd.on .dd-item{color:#FFF;}
-.ad-comment-box{margin-left:235px;background-color:#ededef;height:100%;}
+.ad-comment-box{margin-left:235px;background-color:#fff;height:100%;}
 .ad-comment-box .ad-top-comment{}
 .ad-top-comment .ad-message{height: 50px;padding:0 30px;background-color:#ededef;}
 .ad-top-comment .ad-message .ad-top-left{float:left;margin-top: 9px;}
@@ -74,7 +74,8 @@ html,body{height:100%;}
 .ad-top-comment .next:hover{background-position:-81px 12px;}
 .ad-top-comment .j_tabBg{background-color:#fff;}
 .ad-top-comment .j_tabBg:hover{opacity:0.8;}
-.ad-main-comment{background-color:#FFF;box-shadow:0px 0px 6px #ccc;/*height:calc(100% - 134px);height:-moz-calc(100% - 134px);height:-webkit-calc(100% - 134px);*/}
+.ad-main-comment{background-color:#FFF;
+    position: relative;/*height:calc(100% - 134px);height:-moz-calc(100% - 134px);height:-webkit-calc(100% - 134px);*/}
 
 #breadcrumbs-three{overflow:hidden;position:absolute;top:0px;left:0px;}
 #breadcrumbs-three li{float:left;}

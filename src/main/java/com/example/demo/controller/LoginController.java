@@ -116,7 +116,7 @@ public class LoginController extends BaseController{
     //厂商信息
     @RequestMapping("/VendorInformation")
     public String VendorInformation() {
-        return "/admin/VendorInformation";
+        return "/admin/subpage/VendorInformation";
     }
     //已上线游戏
     @RequestMapping("/Onlinegame")
@@ -130,16 +130,7 @@ public class LoginController extends BaseController{
     public String MonthlyIncome() {
         return "/admin/MonthlyIncome";
     }
-//    //季度收益
-//    @RequestMapping("/Quarterlyearnings")
-//    public String Quarterlyearnings() {
-//        return "/admin/Quarterlyearnings";
-//    }
-//    //年收益
-//    @RequestMapping("/Annualincome")
-//    public String Annualincome() {
-//        return "/admin/Annualincome";
-//    }
+
 
     //游戏管理
     //发布游戏
