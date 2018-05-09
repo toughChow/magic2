@@ -46,7 +46,7 @@
                         <div class="li-item"><em class="scm li-ico ic3"></em>游戏管理<span class="scm arrow"></span></div>
                         <dl>
                             <dd>
-                                <a href="#" class="dd-item">发布游戏<span class="scm dd-ar"></span></a>
+                                <a href="/deployGame" class="dd-item">发布游戏<span class="scm dd-ar"></span></a>
                             </dd>
                             <dd>
                                 <a href="#" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
