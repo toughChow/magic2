@@ -65,9 +65,6 @@ public class GameinformationPo {
     @Column(name = "type_id")
     private Integer type_id;
 
-    //游戏与游戏种类多对多的关系映射
-    @Column(name = "adminId")
-    private Integer adminId;
 
     //游戏与下载地址一对多的关系映射
     @Column(name = "GameDownload_id")

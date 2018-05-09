@@ -57,8 +57,6 @@ public class GameInformationImpl implements GameInformationService {
             gameInformationDao.save(po);
         }
     }
-    @Autowired
-    GameInformationDao gameInformationDao;
     @Override
     public List<GameinformationPo> findAll(Integer id) {
         List<GameinformationPo> gameinformationPos= gameInformationDao.findByAdminId(id);
