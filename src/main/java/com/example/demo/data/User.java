@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Set;
 
 public class User {
-    private long user_id;
+    private Integer user_id;
 
     private  String name;
 
@@ -40,11 +40,11 @@ public class User {
         this.imageurl = imageurl;
     }
 
-    public long getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(long user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 
