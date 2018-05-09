@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <link rel="shortcut icon" type="image/x-icon" href="loginFile/images/logo.png">
-    <link rel="stylesheet" href="loginFile/css/bootstrap.min.css">
-    <link rel="stylesheet" href="loginFile/css/login.css">
-    <script src="loginFile/js/jquery-3.3.1.js"></script>
-    <script src="loginFile/js/bootstrap.min.js"></script>
-    <script src="loginFile/layer/layer.js"></script>
-    <script src="loginFile/layer/extend/layer.ext.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/loginFile/images/logo.png">
+    <link rel="stylesheet" href="/loginFile/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/loginFile/css/login.css">
+    <script src="/loginFile/js/jquery-3.3.1.js"></script>
+    <script src="/loginFile/js/bootstrap.min.js"></script>
+    <script src="/loginFile/layer/layer.js"></script>
+    <script src="/loginFile/layer/extend/layer.ext.js"></script>
 </head>
 <body class="sign">
 <div class="bodybg">

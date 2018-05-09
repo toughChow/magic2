@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/loginFile/**").addResourceLocations("classpath:/loginFile/");
-        registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/");
-        registry.addResourceHandler("/error/**").addResourceLocations("classpath:/error/");
+        registry.addResourceHandler("/loginFile/**").addResourceLocations("/loginFile/");
+        registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
+        registry.addResourceHandler("/error/**").addResourceLocations("/error/");
     }
 }

@@ -65,10 +65,10 @@
                             <div class="li-item"><em class="scm li-ico ic4"></em>用户管理<span class="scm arrow"></span></div>
                             <dl>
                                 <dd>
-                                    <a href="#" class="dd-item">会员管理<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/users/list" class="dd-item">会员管理<span class="scm dd-ar"></span></a>
                                 </dd>
                                 <dd>
-                                    <a href="#" class="dd-item">厂商管理<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/vendors/list" class="dd-item">厂商管理<span class="scm dd-ar"></span></a>
                                 </dd>
                             </dl>
                         </li>
@@ -76,10 +76,10 @@
                             <div class="li-item"><em class="scm li-ico ic5"></em>游戏管理<span class="scm arrow"></span></div>
                             <dl>
                                 <dd>
-                                    <a href="#" class="dd-item">已上线游戏<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/game/pass" class="dd-item">已上线游戏<span class="scm dd-ar"></span></a>
                                 </dd>
                                 <dd>
-                                    <a href="#" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
+                                    <a href="/admin/game/pending" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
                                 </dd>
                             </dl>
                         </li>
