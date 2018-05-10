@@ -35,8 +35,6 @@ public class GameInformationImpl implements GameInformationService {
         gameinformationPo.setReleaseDate(new Timestamp(System.currentTimeMillis()));
         gameInformationDao.save(gameinformationPo);
     }
-    @Autowired
-    private GameInformationDao gameInformationDao;
 
     @Override
     public Page<GameinformationPo> pagingAllByStatus(Pageable pageable, int status) {
@@ -53,5 +51,13 @@ public class GameInformationImpl implements GameInformationService {
             po.setStatus(status);
             gameInformationDao.save(po);
         }
+    }
+
+    @Override
+    public Page<GameinformationPo> pagingAllByAdminId(Pageable pageable,Integer id) {
+        Page<GameinformationPo> page = gameInformationDao.findAll((Root<GameinformationPo> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.and(cb.equal(root.get("adminId"), id));
+        }, pageable);
+        return page;
     }
 }

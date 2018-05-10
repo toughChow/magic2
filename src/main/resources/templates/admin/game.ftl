@@ -45,7 +45,7 @@
                                 <a href="#" class="dd-item">发布游戏<span class="scm dd-ar"></span></a>
                             </dd>
                             <dd>
-                                <a href="#" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
+                                <a href="/admin/game/list" class="dd-item">待审核游戏<span class="scm dd-ar"></span></a>
                             </dd>
                             <dd>
                                 <a href="#" class="dd-item">游戏运行实况<span class="scm dd-ar"></span></a>
@@ -151,7 +151,6 @@
                                         <th>游戏背景</th>
                                         <th>版本</th>
                                         <th>状态</th>
-                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -173,29 +172,12 @@
                                             <span>${row.version}</span>
                                         </td>
                                         <td>
-                                                <#if row.status==0>
-                                                    <span class="label label-default">待审核</span>
+                                            <#if row.status==0>
+                                                <span class="label label-primary">待审核</span>
                                                 <#elseif row.status==1>
-                                                    <span class="label label-success">已上线</span>
-                                                </#if>
-                                        </td>
-                                        <td>
-                                            <#if row.status == 0>
-                                                <a href="javascript:void(0);" class="btn btn-xs btn-default"
-                                                   data-id="${row.id}"
-                                                   data-action="offline">
-                                                    <i class="fa fa-close"></i> 下线
-                                                </a>
-                                                <a href="javascript:void(0);" class="btn btn-xs btn-success"
-                                                   data-id="${row.id}"
-                                                   data-action="online">
-                                                    <i class="fa fa-close"></i> 通过
-                                                </a>
-                                            <#elseif row.status==1>
-                                            <a href="javascript:void(0);" class="btn btn-xs btn-default"
-                                               data-id="${row.id}" data-action="check">
-                                                <i class="fa fa-check"></i> 重审
-                                            </a>
+                                                <span class="label label-success">已上线</span>
+                                                <#elseif row.status==2>
+                                                <span class="label label-default">强制下线</span>
                                             </#if>
                                         </td>
                                     </tr>

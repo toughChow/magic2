@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.controller.deslk.BaseController;
+import com.example.demo.persist.entity.AdminPo;
 import com.example.demo.persist.entity.GameinformationPo;
 import com.example.demo.persist.service.GameInformationService;
 import com.example.demo.persist.utils.Data;
@@ -15,11 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 @Controller
 @RequestMapping("/admin/game")
-public class GameInformationController {
+public class GameInformationController extends BaseController{
     @Autowired
     private GameInformationService gameInformationService;
 
@@ -73,6 +76,15 @@ public class GameInformationController {
     public Data check(Integer id) {
         gameInformationService.updateStatus(id, 0);
         return Data.success("操作成功", Data.NOOP);
+    }
+
+    @RequestMapping("/list")
+    public String list(@RequestParam(defaultValue = "1") Integer pn, ModelMap model){
+        AdminPo po=(AdminPo) session.getAttribute("adminPo");
+        Pageable pageable=new PageRequest(pn-1,10);
+        Page<GameinformationPo> page=gameInformationService.pagingAllByAdminId(pageable,po.getId());
+        model.put("page",page);
+        return "/admin/game";
     }
 
 }

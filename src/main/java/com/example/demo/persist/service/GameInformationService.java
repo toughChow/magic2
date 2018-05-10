@@ -11,4 +11,6 @@ public interface GameInformationService {
     Page<GameinformationPo> pagingAllByStatus(Pageable pageable, int status);
 
     void updateStatus(Integer id, int status);
+
+    Page<GameinformationPo> pagingAllByAdminId(Pageable pageable,Integer id);
 }
